@@ -9,8 +9,8 @@ def start(message):
 
 @bot.message_handler(commands=['ban'])
 def ban_user(message):
-    if message.reply_to_message: #проверка на то, что эта команда была вызвана в ответ на сообщение 
-        chat_id = message.chat.id # сохранение id чата
+    if message.reply_to_message:
+        chat_id = message.chat.id
          # сохранение id и статуса пользователя, отправившего сообщение
         user_id = message.reply_to_message.from_user.id
         user_status = bot.get_chat_member(chat_id, user_id).status 
